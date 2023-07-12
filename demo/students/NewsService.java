@@ -107,7 +107,7 @@ public class NewsService {
         return news.subList(startIndex, endIndex);
     }
 
-    @Scheduled(fixedDelay = PULL_INTERVAL_MINUTES * 60 * 1000) // Schedule pulling every 10 minutes
+    @Scheduled(fixedDelay = PULL_INTERVAL_MINUTES * 60 * 1000)
     private void pullNewsRecords() {
         UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(API_URL)
                 .queryParam("access_key", API_KEY);
